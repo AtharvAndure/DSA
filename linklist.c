@@ -1,11 +1,21 @@
+// Link List Programs , contian All sort of basic program which is needed in the program
+// 1. Creating LinkList.
+// 2. Appending Dynamically.
+// 3. Add and Delete Node from Start , Beginning and Ending of the node.
+// 4. Sort Element Using Bubble Sort Algorithm.
+// 5. Show List.
+
 #include <stdio.h>
 #include <stdlib.h>
+
+// Node Struture.
 typedef struct List
 {
     int data;
     struct List *next;
 } list;
 
+// Append Node Dynamically and Return it.
 list *createNode(int data)
 {
     list *node = (list *)malloc(sizeof(list));
@@ -21,6 +31,7 @@ list *createNode(int data)
     }
 }
 
+// Append Node at the end of the List.
 void appendNode(list **l, int data)
 {
     list *new = createNode(data);
@@ -39,6 +50,8 @@ void appendNode(list **l, int data)
         temp->next = new;
     }
 }
+
+// Remove Last Node.
 void removeLastElement(list **l){
     list * temp=*l;
     if(*l==NULL){
@@ -55,6 +68,7 @@ void removeLastElement(list **l){
     }
 }
 
+// Remove First Node.
 void removeFirstElement(list **l)
 {
     if (*l == NULL)
@@ -68,6 +82,8 @@ void removeFirstElement(list **l)
     }
 
 }
+
+// Add Node at the Beginning.
 void addAtFirst(list **l, int data)
 {
     list *new = createNode(data);
@@ -83,6 +99,7 @@ void addAtFirst(list **l, int data)
     }
 }
 
+// Add Node in Between.
 void addAtBetween(list **l,int data,int pos){
     list * temp=*l;
     list * new = createNode(data);
@@ -101,7 +118,7 @@ void addAtBetween(list **l,int data,int pos){
 }
 
 
-
+// Remove Node in Between.
 void removeBetweenElement(list ** l,int pos){
     list * temp=*l;
     int count=1;
@@ -119,6 +136,7 @@ void removeBetweenElement(list ** l,int pos){
     }
 }
 
+// Sort the List Using Bubble Sort.
 void sortList(list **l){
     if (*l == NULL || (*l)->next == NULL) return;
     int temp;
@@ -133,7 +151,7 @@ void sortList(list **l){
     }
 }
 
-
+// Use Bubble Sort
 void display(list *lis)
 {
     printf("\n");
@@ -180,6 +198,7 @@ int main()
 
     removeBetweenElement(&head,2);
     removeBetweenElement(&head,3);
+
     display(head);
     sortList(&head);
     display(head);
