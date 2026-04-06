@@ -14,3 +14,5 @@ int main(){
     struct tree * parent1=(tree *)malloc(sizeof(tree));
     return 0;
 }
+
+// fofjlfjlff
