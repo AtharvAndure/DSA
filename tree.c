@@ -12,7 +12,5 @@ int main(){
     root->left=NULL;
     root->right=NULL;
     struct tree * parent1=(tree *)malloc(sizeof(tree));
-    return 0;
-}
-
-// fofjlfjlff
+    return 
+    // isefgiewgf
