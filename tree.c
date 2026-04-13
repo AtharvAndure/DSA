@@ -6,11 +6,22 @@ typedef struct Tree{
     struct Tree * right;
     struct Tree * left;   
 }tree;
+
+tree * createNode(int data){
+    tree * new=(tree *)malloc(sizeof(tree));
+    if(!new){
+        printf("Unsucessful to Allocate Memory!");
+        return;
+    }
+    new->data=data;
+    new->right=NULL;
+    new->left=NULL;
+}
 int main(){
     struct Tree * root=(tree *)malloc(sizeof(tree));
     root->data=50;
     root->left=NULL;
     root->right=NULL;
     struct tree * parent1=(tree *)malloc(sizeof(tree));
-    return 
+    return 0;
 }
